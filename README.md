@@ -17,7 +17,7 @@ $ ./gradlew run --args="-mode transaction -action add -name <name> -email <email
 ### To get contact
 
 ```console
-$./gradlew run --args="-mode transaction -action get -name <name> -email <email_id>"
+$ ./gradlew run --args="-mode transaction -action get -name <name> -email <email_id>"
 ```
 
 ### To get all contacts
@@ -33,7 +33,7 @@ Create schema using [email.json](schema/email.json).
 ### To add contact 
 
 ```console
-$./gradlew run --args="-mode storage -action add -name <name> -email <email_id> -phone <phone_no>"
+$ ./gradlew run --args="-mode storage -action add -name <name> -email <email_id> -phone <phone_no>"
 ```
 
 ### To get contact
