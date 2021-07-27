@@ -1,0 +1,33 @@
+plugins {
+    id 'application'
+}
+apply plugin : "java"
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    javaMainClass = "contact.ContactMain"
+}
+
+application {
+    mainClassName ="contact.ContactMain"
+}
+
+//mainClassName = "demo.contact.ConatactMain"
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation group: 'com.scalar-labs', name: 'scalardb', version: '3.0.0'
+//    implementation fileTree(dir: 'core/build/install/core', include: '*.jar')
+//    implementation fileTree(dir: 'core/build/install/core/lib', include: '*.jar')
+    compile 'org.apache.logging.log4j:log4j-slf4j-impl:2.14.1'
+}
+
+test {
+    useJUnitPlatform()
+}
