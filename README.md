@@ -1,30 +1,49 @@
-# scalardb-sample-app
+# Scalar DB Sample App
 
-Please use cassandra as database.
-The schema for database table is provided in file 'email1.json' .
+This is a small sample application for Scalar DB named contact management.
 
 The commands to run the application using gradle is provided below:
---------------------------------------------------------------------
 
-1. Using transaction service
----------------------------
-To add data : 
-./gradlew run --args="-mode transaction -action add -name demo -email s1@demo.com -phone 1111100000"
+## Using transaction service
 
-To get data for a specifc name and email:
-./gradlew run --args="-mode transaction -action get -name demo -email s1@demo.com"
+Create schema using [email_transaction.json](schema/email_transaction.json).
 
-To get all data for a specifc name:
-./gradlew run --args="-mode transaction -action scan -name demo"
+### To add contact 
 
+```console
+$ ./gradlew run --args="-mode transaction -action add -name <name> -email <email_id> -phone <phone_no>"
+```
 
-2. Using storage service
--------------------------
-To add data : 
-./gradlew run --args="-mode storage -action add -name demo -email s1@demo.com -phone 1111100000"
+### To get contact
 
-To get data for a specifc name and email:
-./gradlew run --args="-mode storage -action get -name demo -email s1@demo.com"
+```console
+$./gradlew run --args="-mode transaction -action get -name <name> -email <email_id>"
+```
 
-To get all data for a specifc name:
-./gradlew run --args="-mode storage -action scan -name demo"
+### To get all contacts
+
+```console
+$ ./gradlew run --args="-mode transaction -action scan -name <name>"
+```
+
+## Using storage service
+
+Create schema using [email.json](schema/email.json).
+
+### To add contact 
+
+```console
+$./gradlew run --args="-mode storage -action add -name <name> -email <email_id> -phone <phone_no>"
+```
+
+### To get contact
+
+```console
+$ ./gradlew run --args="-mode storage -action get -name <name> -email <email_id>"
+```
+
+### To get all contacts
+
+```console
+$ ./gradlew run --args="-mode storage -action scan -name <name>"
+```
