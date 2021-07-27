@@ -1,0 +1,1 @@
+# scalardb-sample-app
