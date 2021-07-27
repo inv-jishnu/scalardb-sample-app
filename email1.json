@@ -1,0 +1,14 @@
+{
+  "contacts.email": {
+    "transaction": true,
+    "partition-key": [
+      "name"
+    ],
+    "clustering-key": ["email"],
+    "columns": {
+      "name": "VARCHAR",
+      "email": "VARCHAR",
+      "phone": "VARCHAR"
+    }
+  }
+}
